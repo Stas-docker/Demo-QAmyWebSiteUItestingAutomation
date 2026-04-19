@@ -34,7 +34,7 @@ public void test1ElementsTextboxPositive(){
     @Test
     public void test2ElementsTextboxNegative(){
         /*Email field is empty*/
-        String name ="Vasea";
+        String name ="VaseaPupkin";
         String email = "";
         String curAdress = "current adress test";
         String perAdress = "permanent adress test";

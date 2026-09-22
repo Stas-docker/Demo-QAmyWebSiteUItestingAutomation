@@ -1,25 +1,19 @@
-package STEPS;
+package steps;
 
 
-import POM.ElementsPOM;
-import POM.TextBoxPOM;
-import UTILS.Utils;
+import pom.ElementsPOM;
+import pom.TextBoxPOM;
+import utils.Utils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
-import static CORE.BaseClass.driver;
+import static core.BaseClass.driver;
 
 public class TextBoxSteps {
     ElementsPOM elementsPOM = new ElementsPOM(driver);
     TextBoxPOM textBoxPOM = new TextBoxPOM(driver);
     public SoftAssert softAssert = new SoftAssert();
     Utils utils = new Utils();
-
-
-
-
 
     public TextBoxSteps openTextBox() {
         utils.explicitWaitUntilVisible(elementsPOM.getElements(), 20);

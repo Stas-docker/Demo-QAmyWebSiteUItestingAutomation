@@ -1,11 +1,10 @@
-package CORE;
+package core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-import java.time.Duration;
 
 public class BaseClass {
     ChromeOptions options;
@@ -15,10 +14,16 @@ public class BaseClass {
     public void openDemoQA() {
         WebDriverManager.chromedriver().setup();
         options = new ChromeOptions();
-        options.setBinary("C:/Program Files/Google/Chrome/Application/chrome.exe");
+        options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://demoqa.com/");
-       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }

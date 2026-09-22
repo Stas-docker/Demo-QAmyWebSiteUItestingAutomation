@@ -1,4 +1,4 @@
-package POM.AlertsPOM;
+package pom.alertsPOM;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

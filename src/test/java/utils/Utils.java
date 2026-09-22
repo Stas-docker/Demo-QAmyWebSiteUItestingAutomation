@@ -1,4 +1,4 @@
-package UTILS;
+package utils;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,8 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
-import static CORE.BaseClass.driver;
+import static core.BaseClass.driver;
 
 public class Utils {
     public void explicitWaitUntilVisible(WebElement webelement, int seconds) {
@@ -29,8 +30,8 @@ public class Utils {
     }
 
     public String createDate() {
-        LocalDate localDate = LocalDate.of(2026, 3, 31);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+        LocalDate localDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH);
         String formattedDate = localDate.format(formatter);
         return formattedDate;
     }

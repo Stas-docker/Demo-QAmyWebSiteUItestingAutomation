@@ -1,4 +1,4 @@
-package POM.FormsPOM;
+package pom.formsPOM;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static CORE.BaseClass.driver;
+import static core.BaseClass.driver;
 
 public class PracticeFormPOM {
     public PracticeFormPOM(ChromeDriver driver) {

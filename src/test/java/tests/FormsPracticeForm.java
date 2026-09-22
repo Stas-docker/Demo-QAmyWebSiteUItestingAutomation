@@ -1,7 +1,7 @@
-package TESTS;
+package tests;
 
-import CORE.BaseClass;
-import STEPS.PracticeFormSteps;
+import core.BaseClass;
+import steps.PracticeFormSteps;
 import org.testng.annotations.Test;
 
 public class FormsPracticeForm extends BaseClass {
@@ -19,8 +19,6 @@ public class FormsPracticeForm extends BaseClass {
         PracticeFormSteps practiceFormSteps = new PracticeFormSteps();
         practiceFormSteps.openPracticeForm().fulfillPracticeForm(firstName, lastName, email, gender, number,
                 themes, curAdress, city1).verifyInputs(studentName, email, gender);
-
-
     }
 
 
@@ -34,26 +32,22 @@ public class FormsPracticeForm extends BaseClass {
         String themes = "lnwjhdik";
         String curAdress = "ncxnje";
         String city1 = "NCR";
-        String studentName = firstName + " " + lastName;
         String gender = "Male";
         PracticeFormSteps practiceFormSteps = new PracticeFormSteps();
         practiceFormSteps.openPracticeForm().fulfillPracticeForm(firstName, "", email, gender, number,
                 themes, curAdress, city1).verifyNegativeInputs();
-
     }
 
 
 @Test
     public void test3negative(){
         //without first
-        String firstName = "Мфыуф";
         String lastName = "Vasea";
         String email = "vasea@gmail.com";
         String number = "37378195505";
         String themes = "lnwjhdik";
         String curAdress = "ncxnje";
         String city1 = "NCR";
-        String studentName = firstName + " " + lastName;
     String gender = "Male";
         PracticeFormSteps practiceFormSteps = new PracticeFormSteps();
         practiceFormSteps.openPracticeForm().fulfillPracticeForm("", lastName, email, gender, number,
@@ -68,14 +62,12 @@ public class FormsPracticeForm extends BaseClass {
         String firstName = "Мфыуф";
         String lastName = "Vasea";
         String email = "vasea@gmail.com";
-        String number = "37378195505";
         String themes = "lnwjhdik";
         String curAdress = "ncxnje";
         String city1 = "NCR";
-        String studentName = firstName + " " + lastName;
-        String gender = "";
+        String gender = "Male";
         PracticeFormSteps practiceFormSteps = new PracticeFormSteps();
-        practiceFormSteps.openPracticeForm().fulfillPracticeForm(firstName, lastName, email, gender, number,
+        practiceFormSteps.openPracticeForm().fulfillPracticeForm(firstName, lastName, email, gender, "",
                 themes, curAdress, city1).verifyNegativeInputs();
 
     }
@@ -86,15 +78,16 @@ public class FormsPracticeForm extends BaseClass {
         //without email
         String firstName = "Мфыуф";
         String lastName = "Vasea";
-        String email = "vasea@gmail.com";
         String number = "37378195505";
         String themes = "lnwjhdik";
         String curAdress = "ncxnje";
         String city1 = "NCR";
-        String studentName = firstName + " " + lastName;
         String gender = "Male";
         PracticeFormSteps practiceFormSteps = new PracticeFormSteps();
         practiceFormSteps.openPracticeForm().fulfillPracticeForm(firstName, lastName, "", gender, number,
                 themes, curAdress, city1).verifyNegativeInputs();
     }
+    //We see that here is a bug, the user can register without email.
 }
+
+//We can continue our verifications and use all the fiels or leave all the fields empty.

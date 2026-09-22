@@ -1,8 +1,8 @@
-package TESTS;
+package tests;
 
 
-import CORE.BaseClass;
-import STEPS.TextBoxSteps;
+import core.BaseClass;
+import steps.TextBoxSteps;
 import org.testng.annotations.Test;
 
 public class ElementsTextBox extends BaseClass{

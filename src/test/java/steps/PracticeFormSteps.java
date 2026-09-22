@@ -1,11 +1,11 @@
-package STEPS;
-import POM.FormsPOM.FormsPOM;
-import POM.FormsPOM.PracticeFormPOM;
-import UTILS.Utils;
+package steps;
+import pom.formsPOM.FormsPOM;
+import pom.formsPOM.PracticeFormPOM;
+import utils.Utils;
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
 
-import static CORE.BaseClass.driver;
+import static core.BaseClass.driver;
 
 public class PracticeFormSteps {
     FormsPOM formsPOM = new FormsPOM(driver);
@@ -37,7 +37,7 @@ public class PracticeFormSteps {
         practiceFormPOM.cityChoose1(city1);
         utils.scroll(practiceFormPOM.getSubmitButton());
         utils.explicitWaitUntilVisible(practiceFormPOM.getSubmitButton(), 20);
-        practiceFormPOM.chooseFile("C:/Users/Asus/OneDrive/Изображения/photo_2024-10-13_00-17-20.jpg");
+        practiceFormPOM.chooseFile("/Users/smiti/Downloads/learn-git-branching-certificate-stanislav-miti.png");
         String currentDate = utils.createDate();
         String dateAttribute = practiceFormPOM.getDate().getAttribute("value");
         softAssert.assertEquals(dateAttribute, currentDate);
@@ -54,13 +54,14 @@ public class PracticeFormSteps {
             softAssert.assertEquals(studentName, nameValue);
             softAssert.assertEquals(studentEmail,emailValue);
             softAssert.assertEquals(gender, genderValue);
-
+softAssert.assertAll();
         return this;
     }
 
     public PracticeFormSteps verifyNegativeInputs() {
             softAssert.assertEquals(driver.findElements(By.xpath("//tbody/tr[1]/td[2]")).isEmpty(), true);
-            softAssert.assertEquals(driver.findElement(By.xpath("//tbody/tr[2]/td[2]")).getSize(), 0);
+            softAssert.assertEquals(driver.findElements(By.xpath("//tbody/tr[2]/td[2]")).isEmpty(), true);
+            softAssert.assertAll();
         return this;
     }
 
